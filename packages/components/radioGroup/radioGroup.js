@@ -5,16 +5,17 @@ export const RadioGroup = ({
   name,
   onValueChange,
   value,
-  disable,
+  disable
 }) => {
   let value1 = value;
-  return (
-    <>
-      {Children.map(children, (child) => {
-        return cloneElement(child, { name, onValueChange, value1, disable });
-      })}
-    </>
-  );
+  return /*#__PURE__*/React.createElement(React.Fragment, null, Children.map(children, child => {
+    return /*#__PURE__*/cloneElement(child, {
+      name,
+      onValueChange,
+      value1,
+      disable
+    });
+  }));
 };
 export const RadioGroupItem = ({
   value,
@@ -22,29 +23,25 @@ export const RadioGroupItem = ({
   children,
   onValueChange,
   value1,
-  disable,
+  disable
 }) => {
   let disable_s;
   if (disable) {
     disable_s = "cursor-not-allowed opacity-50";
   }
-  return (
-    <div>
-      <input
-        type="radio"
-        value={value}
-        name={name}
-        id={value}
-        className={`${css.input}`}
-        onClick={() => {
-          onValueChange(value);
-        }}
-        checked={value == value1 ? true : false}
-        disabled={disable}
-      />
-      <label for={value} className={`${css.text} ${disable_s}`}>
-        {children}
-      </label>
-    </div>
-  );
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("input", {
+    type: "radio",
+    value: value,
+    name: name,
+    id: value,
+    className: `${css.input}`,
+    onClick: () => {
+      onValueChange(value);
+    },
+    checked: value == value1 ? true : false,
+    disabled: disable
+  }), /*#__PURE__*/React.createElement("label", {
+    for: value,
+    className: `${css.text} ${disable_s}`
+  }, children));
 };

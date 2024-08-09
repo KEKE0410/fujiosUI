@@ -1,10 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import css from "./switch.module.css";
-export const Switch = ({
-  checked = false,
-  onCheckChange,
-  disable
-}) => {
+
+export const Switch = ({ checked = false, onCheckChange, disable }) => {
   const slideRound = useRef();
   const switchRef = useRef();
   const [dataState, setDataState] = useState(false);
@@ -28,6 +25,7 @@ export const Switch = ({
       setSwitchBgColor("bg-gray-300");
     }
   }, [dataState]);
+
   const clickEvent = () => {
     if (dataState == false) {
       setDataState(true);
@@ -35,17 +33,19 @@ export const Switch = ({
       setDataState(false);
     }
   };
-  return /*#__PURE__*/React.createElement("button", {
-    ref: switchRef,
-    className: `${css.switch} ${switchBgColor} ${disable ? "cursor-not-allowed grayscale opacity-50" : null}`,
-    onClick: () => {
-      if (disable) {
-        return;
-      }
-      clickEvent();
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    className: css.slider,
-    ref: slideRound
-  }));
+
+  return (
+    <button
+      ref={switchRef}
+      className={`${css.switch} ${switchBgColor} ${disable ? "cursor-not-allowed grayscale opacity-50" : null}`}
+      onClick={() => {
+        if (disable) {
+          return;
+        }
+        clickEvent();
+      }}
+    >
+      <span className={css.slider} ref={slideRound}></span>
+    </button>
+  );
 };

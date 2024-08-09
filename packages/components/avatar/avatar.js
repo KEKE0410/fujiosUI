@@ -1,4 +1,8 @@
-export const Avatar = ({ src, className, size = "md" }) => {
+export const Avatar = ({
+  src,
+  className,
+  size = "md"
+}) => {
   let size_s;
   if (size == "sm") {
     size_s = "w-8 h-8";
@@ -7,11 +11,11 @@ export const Avatar = ({ src, className, size = "md" }) => {
   } else if (size == "lg") {
     size_s = "w-20 h-20";
   }
-  return (
-    <img
-      src={src}
-      className={`${className} ${size_s}`}
-      style={{ borderRadius: "9999px" }}
-    />
-  );
+  return /*#__PURE__*/React.createElement("img", {
+    src: src,
+    className: `${className} ${size_s}`,
+    style: {
+      borderRadius: "9999px"
+    }
+  });
 };

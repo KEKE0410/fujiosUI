@@ -5,13 +5,14 @@ export const Button = ({
   size = "md",
   radius = "md",
   className,
-  loading = false
+  loading = false,
 }) => {
   let variant_s;
   if (variant == "primary") {
     variant_s = "bg-fujios-primary hover:contrast-75 text-white";
   } else if (variant == "secondary") {
-    variant_s = "border-fujios-primary border text-fujios-primary hover:bg-gray-100";
+    variant_s =
+      "border-fujios-primary border text-fujios-primary hover:bg-gray-100";
   } else if (variant == "ghost") {
     variant_s = "text-fujios-primary hover:bg-gray-100";
   } else if (variant == "alert") {
@@ -19,6 +20,7 @@ export const Button = ({
   } else if (variant == "disable") {
     variant_s = "text-white bg-gray-500 cursor-not-allowed";
   }
+
   let radius_s;
   if (radius == "md") {
     radius_s = "rounded-md";
@@ -27,6 +29,7 @@ export const Button = ({
   } else if (radius == "full") {
     radius_s = "rounded-full";
   }
+
   let size_s;
   if (size == "md") {
     size_s = "py-2 px-3";
@@ -37,13 +40,16 @@ export const Button = ({
   }
   let loading_s;
   if (loading == true) {
-    loading_s = /*#__PURE__*/React.createElement(LoaderCircle, {
-      className: "mr-2 rotate-360 animate-spin"
-    });
+    loading_s = <LoaderCircle className="mr-2 rotate-360 animate-spin"/>;
   } else if (loading == false) {
     loading_s = null;
   }
-  return /*#__PURE__*/React.createElement("button", {
-    className: `${className} ${variant_s} ${size_s} ${radius_s} flex items-center justify-center`
-  }, loading_s, children);
+  return (
+    <button
+      className={`${className} ${variant_s} ${size_s} ${radius_s} flex items-center justify-center`}
+    >
+      {loading_s}
+      {children}
+    </button>
+  );
 };
