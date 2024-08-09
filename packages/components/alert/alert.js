@@ -1,4 +1,5 @@
 import { Children, cloneElement } from "react";
+import { jsx as _jsx } from "react/jsx-runtime";
 export const Alert = ({
   children,
   variant = "default"
@@ -9,13 +10,14 @@ export const Alert = ({
   } else if (variant == "alert") {
     style_s = "border-fujios-alert";
   }
-  return /*#__PURE__*/React.createElement("div", {
-    className: `rounded-xl shadow-md border-2 ${style_s} bg-white p-3 relative`
-  }, Children.map(children, child => {
-    return /*#__PURE__*/cloneElement(child, {
-      variant
-    });
-  }));
+  return /*#__PURE__*/_jsx("div", {
+    className: `rounded-xl shadow-md border-2 ${style_s} bg-white p-3 relative`,
+    children: Children.map(children, child => {
+      return /*#__PURE__*/cloneElement(child, {
+        variant
+      });
+    })
+  });
 };
 export const AlertTitle = ({
   children,
@@ -27,9 +29,10 @@ export const AlertTitle = ({
   } else if (variant == "alert") {
     style_s = "text-fujios-alert";
   }
-  return /*#__PURE__*/React.createElement("h2", {
-    className: `pl-9 font-semibold ${style_s}`
-  }, children);
+  return /*#__PURE__*/_jsx("h2", {
+    className: `pl-9 font-semibold ${style_s}`,
+    children: children
+  });
 };
 export const AlertDescription = ({
   children,
@@ -41,9 +44,10 @@ export const AlertDescription = ({
   } else if (variant == "alert") {
     style_s = "text-fujios-alert";
   }
-  return /*#__PURE__*/React.createElement("p", {
-    className: `pl-9 text-sm text-gray-500 ${style_s}`
-  }, children);
+  return /*#__PURE__*/_jsx("p", {
+    className: `pl-9 text-sm text-gray-500 ${style_s}`,
+    children: children
+  });
 };
 export const AlertIcon = ({
   children,
@@ -55,7 +59,8 @@ export const AlertIcon = ({
   } else if (variant == "alert") {
     style_s = "text-fujios-alert";
   }
-  return /*#__PURE__*/React.createElement("div", {
-    className: `absolute top-[16px] ${style_s}`
-  }, children);
+  return /*#__PURE__*/_jsx("div", {
+    className: `absolute top-[16px] ${style_s}`,
+    children: children
+  });
 };

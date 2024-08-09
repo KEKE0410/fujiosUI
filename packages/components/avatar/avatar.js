@@ -1,3 +1,4 @@
+import { jsx as _jsx } from "react/jsx-runtime";
 export const Avatar = ({
   src,
   className,
@@ -11,7 +12,7 @@ export const Avatar = ({
   } else if (size == "lg") {
     size_s = "w-20 h-20";
   }
-  return /*#__PURE__*/React.createElement("img", {
+  return /*#__PURE__*/_jsx("img", {
     src: src,
     className: `${className} ${size_s}`,
     style: {

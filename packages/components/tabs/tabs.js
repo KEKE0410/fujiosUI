@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Children, cloneElement } from "react";
+import { jsx as _jsx } from "react/jsx-runtime";
 export const Tabs = ({
   children
 }) => {
@@ -15,26 +16,29 @@ export const Tabs = ({
       }
     }
   }, [children]);
-  return /*#__PURE__*/React.createElement("div", null, Children.map(children, child => {
-    return /*#__PURE__*/cloneElement(child, {
-      selectedTab,
-      setSelectedTab
-    });
-  }));
+  return /*#__PURE__*/_jsx("div", {
+    children: Children.map(children, child => {
+      return /*#__PURE__*/cloneElement(child, {
+        selectedTab,
+        setSelectedTab
+      });
+    })
+  });
 };
 export const TabsList = ({
   children,
   selectedTab,
   setSelectedTab
 }) => {
-  return /*#__PURE__*/React.createElement("div", {
-    className: "flex gap-2 bg-gray-300 rounded-md p-1"
-  }, Children.map(children, child => {
-    return /*#__PURE__*/cloneElement(child, {
-      selectedTab,
-      setSelectedTab
-    });
-  }));
+  return /*#__PURE__*/_jsx("div", {
+    className: "flex gap-2 bg-gray-300 rounded-md p-1",
+    children: Children.map(children, child => {
+      return /*#__PURE__*/cloneElement(child, {
+        selectedTab,
+        setSelectedTab
+      });
+    })
+  });
 };
 export const TabsListItem = ({
   children,
@@ -43,25 +47,27 @@ export const TabsListItem = ({
   setSelectedTab
 }) => {
   const isSelected = selectedTab === value;
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/_jsx("div", {
     className: `py-2 px-5 rounded-md ${isSelected ? "bg-white" : null} w-full text-center cursor-pointer`,
     onClick: () => {
       setSelectedTab(value);
-    }
-  }, children);
+    },
+    children: children
+  });
 };
 export const TabsContent = ({
   children,
   selectedTab,
   className
 }) => {
-  return /*#__PURE__*/React.createElement("div", {
-    className: className
-  }, Children.map(children, child => {
-    return /*#__PURE__*/cloneElement(child, {
-      selectedTab
-    });
-  }));
+  return /*#__PURE__*/_jsx("div", {
+    className: className,
+    children: Children.map(children, child => {
+      return /*#__PURE__*/cloneElement(child, {
+        selectedTab
+      });
+    })
+  });
 };
 export const TabsContentItem = ({
   children,

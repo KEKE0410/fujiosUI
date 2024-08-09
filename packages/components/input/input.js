@@ -1,3 +1,4 @@
+import { jsx as _jsx } from "react/jsx-runtime";
 export const Input = ({
   className,
   placeholder = "",
@@ -11,7 +12,7 @@ export const Input = ({
   if (disable) {
     disable_s = "cursor-not-allowed opacity-50";
   }
-  return /*#__PURE__*/React.createElement("input", {
+  return /*#__PURE__*/_jsx("input", {
     onChange: e => {
       onValueChange(e.target.value);
     },

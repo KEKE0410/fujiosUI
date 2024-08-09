@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import css from "./switch.module.css";
+import { jsx as _jsx } from "react/jsx-runtime";
 export const Switch = ({
   checked = false,
   onCheckChange,
@@ -35,7 +36,7 @@ export const Switch = ({
       setDataState(false);
     }
   };
-  return /*#__PURE__*/React.createElement("button", {
+  return /*#__PURE__*/_jsx("button", {
     ref: switchRef,
     className: `${css.switch} ${switchBgColor} ${disable ? "cursor-not-allowed grayscale opacity-50" : null}`,
     onClick: () => {
@@ -43,9 +44,10 @@ export const Switch = ({
         return;
       }
       clickEvent();
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    className: css.slider,
-    ref: slideRound
-  }));
+    },
+    children: /*#__PURE__*/_jsx("span", {
+      className: css.slider,
+      ref: slideRound
+    })
+  });
 };

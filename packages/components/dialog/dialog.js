@@ -1,15 +1,18 @@
 import { Children, cloneElement, useEffect, useRef, useState } from "react";
 import css from "./dialog.module.css";
+import { Fragment as _Fragment, jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 export const Dialog = ({
   children
 }) => {
   const [state, setState] = useState(false);
-  return /*#__PURE__*/React.createElement(React.Fragment, null, Children.map(children, child => {
-    return /*#__PURE__*/cloneElement(child, {
-      state,
-      setState
-    });
-  }));
+  return /*#__PURE__*/_jsx(_Fragment, {
+    children: Children.map(children, child => {
+      return /*#__PURE__*/cloneElement(child, {
+        state,
+        setState
+      });
+    })
+  });
 };
 export const DialogOpen = ({
   children,
@@ -17,12 +20,13 @@ export const DialogOpen = ({
   setState,
   className
 }) => {
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/_jsx("div", {
     onClick: () => {
       setState(true);
     },
-    className: className
-  }, children);
+    className: className,
+    children: children
+  });
 };
 export const DialogContent = ({
   children,
@@ -47,21 +51,25 @@ export const DialogContent = ({
       }, 200);
     }
   }, [state]);
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-    ref: contentRef,
-    className: "hidden z-50"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: css.openBg,
-    ref: bgRef
-  }), /*#__PURE__*/React.createElement("div", {
-    ref: maincontentRef,
-    className: `${css.contentOpen} rounded-xl shadow-md border-2 border-gray-100 bg-white`
-  }, Children.map(children, child => {
-    return /*#__PURE__*/cloneElement(child, {
-      state,
-      setState
-    });
-  }))));
+  return /*#__PURE__*/_jsx(_Fragment, {
+    children: /*#__PURE__*/_jsxs("div", {
+      ref: contentRef,
+      className: "hidden z-50",
+      children: [/*#__PURE__*/_jsx("div", {
+        className: css.openBg,
+        ref: bgRef
+      }), /*#__PURE__*/_jsx("div", {
+        ref: maincontentRef,
+        className: `${css.contentOpen} rounded-xl shadow-md border-2 border-gray-100 bg-white`,
+        children: Children.map(children, child => {
+          return /*#__PURE__*/cloneElement(child, {
+            state,
+            setState
+          });
+        })
+      })]
+    })
+  });
 };
 export const DialogClose = ({
   children,
@@ -69,12 +77,13 @@ export const DialogClose = ({
   state,
   setState
 }) => {
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/_jsx("div", {
     className: className,
     onClick: () => {
       setState(false);
-    }
-  }, children);
+    },
+    children: children
+  });
 };
 export const DialogHeader = ({
   children,
@@ -82,32 +91,35 @@ export const DialogHeader = ({
   state,
   setState
 }) => {
-  return /*#__PURE__*/React.createElement("div", {
-    className: `px-5 pt-5 ${className}`
-  }, Children.map(children, child => {
-    return /*#__PURE__*/cloneElement(child, {
-      state,
-      setState
-    });
-  }));
+  return /*#__PURE__*/_jsx("div", {
+    className: `px-5 pt-5 ${className}`,
+    children: Children.map(children, child => {
+      return /*#__PURE__*/cloneElement(child, {
+        state,
+        setState
+      });
+    })
+  });
 };
 export const DialogTitle = ({
   children,
   state,
   setState
 }) => {
-  return /*#__PURE__*/React.createElement("h2", {
-    className: "text-lg font-bold"
-  }, children);
+  return /*#__PURE__*/_jsx("h2", {
+    className: "text-lg font-bold",
+    children: children
+  });
 };
 export const DialogDescription = ({
   children,
   state,
   setState
 }) => {
-  return /*#__PURE__*/React.createElement("p", {
-    className: "text-sm opacity-50"
-  }, children);
+  return /*#__PURE__*/_jsx("p", {
+    className: "text-sm opacity-50",
+    children: children
+  });
 };
 export const DialogFooter = ({
   children,
@@ -115,12 +127,13 @@ export const DialogFooter = ({
   state,
   setState
 }) => {
-  return /*#__PURE__*/React.createElement("div", {
-    className: `px-5 pb-5 ${className}`
-  }, Children.map(children, child => {
-    return /*#__PURE__*/cloneElement(child, {
-      state,
-      setState
-    });
-  }));
+  return /*#__PURE__*/_jsx("div", {
+    className: `px-5 pb-5 ${className}`,
+    children: Children.map(children, child => {
+      return /*#__PURE__*/cloneElement(child, {
+        state,
+        setState
+      });
+    })
+  });
 };

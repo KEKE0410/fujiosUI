@@ -1,4 +1,5 @@
 import { LoaderCircle } from "lucide-react";
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 export const Button = ({
   children,
   variant = "primary",
@@ -37,13 +38,14 @@ export const Button = ({
   }
   let loading_s;
   if (loading == true) {
-    loading_s = /*#__PURE__*/React.createElement(LoaderCircle, {
+    loading_s = /*#__PURE__*/_jsx(LoaderCircle, {
       className: "mr-2 rotate-360 animate-spin"
     });
   } else if (loading == false) {
     loading_s = null;
   }
-  return /*#__PURE__*/React.createElement("button", {
-    className: `${className} ${variant_s} ${size_s} ${radius_s} flex items-center justify-center`
-  }, loading_s, children);
+  return /*#__PURE__*/_jsxs("button", {
+    className: `${className} ${variant_s} ${size_s} ${radius_s} flex items-center justify-center`,
+    children: [loading_s, children]
+  });
 };
