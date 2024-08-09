@@ -1,0 +1,19 @@
+.contentOpen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transition: 0.4s ease;
+  opacity: 0;
+}
+.openBg {
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  background: black;
+  width: 100%;
+  transition: 0.2s ease;
+  opacity: 0;
+}
