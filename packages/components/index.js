@@ -1,3 +1,5 @@
+"use client"
+
 export * from "./accordion/accordion"
 export * from "./alert/alert"
 export * from "./avatar/avatar"
