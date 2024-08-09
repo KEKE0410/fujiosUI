@@ -14,3 +14,6 @@ call npx babel ./packages/components/select/select_d.js --out-file ./packages/co
 call npx babel ./packages/components/switch/switch_d.js --out-file ./packages/components/switch/switch.js
 call npx babel ./packages/components/table/table_d.js --out-file ./packages/components/table/table.js
 call npx babel ./packages/components/tabs/tabs_d.js --out-file ./packages/components/tabs/tabs.js
+call npx babel ./packages/components/headerNav/headerNav_d.js --out-file ./packages/components/headerNav/headerNav.js
+call npx babel ./packages/components/drawer/drawer_d.js --out-file ./packages/components/drawer/drawer.js
+call npx babel ./packages/components/sheet/sheet_d.js --out-file ./packages/components/sheet/sheet.js

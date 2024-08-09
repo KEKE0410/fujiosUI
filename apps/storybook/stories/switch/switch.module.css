@@ -1,0 +1,18 @@
+.switch {
+  width: 50px;
+  height: 30px;
+  position: relative;
+  border-radius: 9999px;
+}
+
+.slider {
+  transition: 0.2s ease;
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 9999px;
+}

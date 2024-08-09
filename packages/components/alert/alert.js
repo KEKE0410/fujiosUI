@@ -45,7 +45,7 @@ export const AlertDescription = ({
     style_s = "text-fujios-alert";
   }
   return /*#__PURE__*/_jsx("p", {
-    className: `pl-9 text-sm text-gray-500 ${style_s}`,
+    className: `pl-9 text-sm ${style_s}`,
     children: children
   });
 };

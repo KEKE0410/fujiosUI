@@ -1,0 +1,30 @@
+.input {
+  appearance: none;
+  position: absolute;
+}
+.text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: 0.2s ease;
+}
+.text::before {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  border: 1px solid var(--fujios-primary);
+  width: 16px;
+  height: 16px;
+}
+
+.input:checked + .text::after {
+  content: "";
+  position: absolute;
+  left: calc(8px - 5px);
+  display: block;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: var(--fujios-primary);
+}
