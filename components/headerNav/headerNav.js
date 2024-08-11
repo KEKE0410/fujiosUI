@@ -81,20 +81,34 @@ export const HeaderNavMenu = ({
 export const HeaderNavMenuItem = ({
   children,
   type = "text",
-  className
+  className,
+  href,
+  target
 }) => {
   if (type == "text") {
-    return /*#__PURE__*/_jsx("div", {
-      className: `${className} ${css.menuItem}`,
-      children: children
+    return /*#__PURE__*/_jsx("a", {
+      href: href,
+      target: target,
+      children: /*#__PURE__*/_jsx("div", {
+        className: `${className} ${css.menuItem}`,
+        children: children
+      })
     });
   } else if (type == "logo") {
-    return /*#__PURE__*/_jsx("div", {
-      className: `${className} ${css.logo}`,
-      children: children
+    return /*#__PURE__*/_jsx("a", {
+      href: href,
+      target: target,
+      children: /*#__PURE__*/_jsx("div", {
+        className: `${className} ${css.logo}`,
+        children: children
+      })
     });
   } else if (type == "native") {
-    return children;
+    return /*#__PURE__*/_jsx("a", {
+      href: href,
+      target: target,
+      children: children
+    });
   }
 };
 export const HeaderNavSubMenu = ({
