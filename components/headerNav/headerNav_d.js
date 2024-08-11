@@ -73,13 +73,31 @@ export const HeaderNavMenu = ({ children, className }) => {
   );
 };
 
-export const HeaderNavMenuItem = ({ children, type = "text", className }) => {
+export const HeaderNavMenuItem = ({
+  children,
+  type = "text",
+  className,
+  href,
+  target,
+}) => {
   if (type == "text") {
-    return <div className={`${className} ${css.menuItem}`}>{children}</div>;
+    return (
+      <a href={href} target={target}>
+        <div className={`${className} ${css.menuItem}`}>{children}</div>
+      </a>
+    );
   } else if (type == "logo") {
-    return <div className={`${className} ${css.logo}`}>{children}</div>;
+    return (
+      <a href={href} target={target}>
+        <div className={`${className} ${css.logo}`}>{children}</div>
+      </a>
+    );
   } else if (type == "native") {
-    return children;
+    return (
+      <a href={href} target={target}>
+        {children}
+      </a>
+    );
   }
 };
 

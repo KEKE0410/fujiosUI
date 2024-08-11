@@ -26,7 +26,7 @@ export const Default = {
       >
         <HeaderNav>
           <HeaderNavMenu>
-            <HeaderNavMenuItem type="logo">
+            <HeaderNavMenuItem type="logo" href="/">
               <svg
                 viewBox="0 0 456.61169 74.122009"
                 version="1.1"
@@ -53,9 +53,9 @@ export const Default = {
                 </g>
               </svg>
             </HeaderNavMenuItem>
-            <HeaderNavMenuItem>ドキュメント</HeaderNavMenuItem>
-            <HeaderNavMenuItem>コンポーネント</HeaderNavMenuItem>
-            <HeaderNavMenuItem>カラー</HeaderNavMenuItem>
+            <HeaderNavMenuItem href="/doc">ドキュメント</HeaderNavMenuItem>
+            <HeaderNavMenuItem href="components">コンポーネント</HeaderNavMenuItem>
+            <HeaderNavMenuItem href="color">カラー</HeaderNavMenuItem>
           </HeaderNavMenu>
           <HeaderNavSubMenu>
             <HeaderNavMenuItem type="native">

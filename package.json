@@ -10,12 +10,13 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "build-com": "cd ./script && build",
-    "publish-com":"cd ./script && npm_publish "
+    "publish-com": "cd ./script && npm_publish "
   },
   "dependencies": {
     "@babel/cli": "^7.24.8",
     "@babel/core": "^7.25.2",
     "@babel/preset-react": "^7.24.7",
+    "@fujios/ui": "^1.0.9",
     "@radix-ui/react-dialog": "^1.1.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
